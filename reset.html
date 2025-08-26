@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #191919;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      outline: none;
+    }
+    button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background: white;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    #message {
+      margin-top: 15px;
+      color: #00ffea;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Reset Password</h2>
+  <form id="resetForm">
+    <input type="email" id="resetEmail" placeholder="Enter your email" required>
+    <button type="submit">Send Reset Link</button>
+  </form>
+  <p id="message" style="display:none;">Password reset link sent to your email</p>
+
+  <script>
+    const resetForm = document.getElementById("resetForm");
+    const message = document.getElementById("message");
+
+    resetForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      message.style.display = "block";
+    });
+  </script>
+</body>
+</html>
